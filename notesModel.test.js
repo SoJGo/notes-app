@@ -7,12 +7,21 @@ describe('Notes model', () => {
     expect(model.getNotes()).toEqual([]);
   });
 
-  it('add a not to the array', () => {
+  it('adds a note to the array', () => {
     const model = new NotesModel();
     model.addNotes('Buy Chocolates');
 
     expect(model.getNotes()).toEqual(['Buy Chocolates']);
   });
+
+  it('resets to an empty array', () => {
+    const model = new NotesModel();
+    model.addNotes('Buy Sweets');
+    model.reset();
+
+    expect(model.getNotes()).toEqual([]);
+  });
+  
 });
 
 
