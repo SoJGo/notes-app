@@ -7,6 +7,10 @@ class NotesModel {
     return this.notes;
   }
 
+  addNotes(note) {
+    this.notes.push(note);
+  }
+
 }
 
 module.exports = NotesModel;

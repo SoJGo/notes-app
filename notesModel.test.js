@@ -7,6 +7,12 @@ describe('Notes model', () => {
     expect(model.getNotes()).toEqual([]);
   });
 
+  it('add a not to the array', () => {
+    const model = new NotesModel();
+    model.addNotes('Buy Chocolates');
+
+    expect(model.getNotes()).toEqual(['Buy Chocolates']);
+  });
 });
 
 
