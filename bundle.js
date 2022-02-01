@@ -14,7 +14,7 @@
         getNotes() {
           return this.notes;
         }
-        addNotes(note) {
+        addNote(note) {
           this.notes.push(note);
         }
         reset() {
@@ -32,6 +32,15 @@
         constructor(model2) {
           this.mainContainerEl = document.querySelector("#main-container");
           this.model = model2;
+          this.addButtonEl = document.querySelector("#add-note-button");
+          this.addButtonEl.addEventListener("click", () => {
+            const newNote = document.querySelector("#note-input").value;
+            this.addNewNote(newNote);
+          });
+        }
+        addNewNote(newNote) {
+          this.model.addNote(newNote);
+          this.displayNotes();
         }
         displayNotes() {
           let notes = this.model.getNotes();
@@ -51,7 +60,5 @@
   var NotesModel = require_notesModel();
   var NotesView = require_notesView();
   var model = new NotesModel();
-  model.addNotes("This is an example note.");
   var view = new NotesView(model);
-  view.displayNotes();
 })();

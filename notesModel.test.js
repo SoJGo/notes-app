@@ -9,14 +9,14 @@ describe('Notes model', () => {
 
   it('adds a note to the array', () => {
     const model = new NotesModel();
-    model.addNotes('Buy Chocolates');
+    model.addNote('Buy Chocolates');
 
     expect(model.getNotes()).toEqual(['Buy Chocolates']);
   });
 
   it('resets to an empty array', () => {
     const model = new NotesModel();
-    model.addNotes('Buy Sweets');
+    model.addNote('Buy Sweets');
     model.reset();
 
     expect(model.getNotes()).toEqual([]);

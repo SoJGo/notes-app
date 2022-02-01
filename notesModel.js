@@ -7,14 +7,13 @@ class NotesModel {
     return this.notes;
   }
 
-  addNotes(note) {
+  addNote(note) {
     this.notes.push(note);
   }
 
   reset() {
     this.notes = [];
   }
-
 }
 
 module.exports = NotesModel;
