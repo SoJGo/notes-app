@@ -40,6 +40,7 @@
         }
         addNewNote(newNote) {
           this.model.addNote(newNote);
+          this.viewReset();
           this.displayNotes();
         }
         displayNotes() {
@@ -49,6 +50,12 @@
             this.div.innerText = note;
             this.div.className = "note";
             this.mainContainerEl.append(this.div);
+          });
+        }
+        viewReset() {
+          let notes = document.querySelectorAll(".note");
+          notes.forEach((note) => {
+            note.remove();
           });
         }
       };
